@@ -1,6 +1,6 @@
 import "./App.css";
-import Form from "./components/Form/Form";
-import GiftList from "./components/GiftList/GiftList";
+import Form from "../Form/Form";
+import GiftList from "../GiftList/GiftList";
 
 const App = (): React.ReactElement => {
   return (
