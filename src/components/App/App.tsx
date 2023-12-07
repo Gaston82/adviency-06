@@ -26,22 +26,24 @@ const App = (): React.ReactElement => {
   };
 
   return (
-    <section className="container">
-      <h1 className="app-title">Regalos</h1>
-      <Form onAddGifts={handleAddGift} />
-      {gifts.length <= 0 ? (
-        <>
-          <p>You don't buy anything yet?</p>
-          <p>Start now</p>
-        </>
-      ) : (
-        <GiftList
-          gifts={gifts}
-          onDeleteGift={handleDeleteGift}
-          onDeleteGifts={handleDeleteGifts}
-        />
-      )}
-    </section>
+    <div className="container">
+      <main className="main">
+        <h1 className="app-title">Regalos</h1>
+        <Form onAddGifts={handleAddGift} />
+        {gifts.length <= 0 ? (
+          <>
+            <p>You don't buy anything yet?</p>
+            <p>Start now</p>
+          </>
+        ) : (
+          <GiftList
+            gifts={gifts}
+            onDeleteGift={handleDeleteGift}
+            onDeleteGifts={handleDeleteGifts}
+          />
+        )}
+      </main>
+    </div>
   );
 };
 export default App;
