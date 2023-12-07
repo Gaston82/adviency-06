@@ -21,11 +21,19 @@ const App = (): React.ReactElement => {
     setGifts(filteredGifts);
   };
 
+  const handleDeleteGifts = (): void => {
+    setGifts([]);
+  };
+
   return (
     <section className="container">
       <h1 className="app-title">Regalos</h1>
       <Form onAddGifts={handleAddGift} />
-      <GiftList gifts={gifts} onDeleteGift={handleDeleteGift} />
+      <GiftList
+        gifts={gifts}
+        onDeleteGift={handleDeleteGift}
+        onDeleteGifts={handleDeleteGifts}
+      />
     </section>
   );
 };
