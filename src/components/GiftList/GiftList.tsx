@@ -1,4 +1,5 @@
 import { GiftStructure } from "../../types";
+import Gift from "../Gift/Gift";
 import "./GiftList.css";
 
 interface GiftListProps {
@@ -9,7 +10,7 @@ const GiftList = ({ gifts }: GiftListProps): React.ReactElement => {
   return (
     <ul className="gift-list">
       {gifts.map((gift) => (
-        <li key={gift.id}>{gift.name}</li>
+        <Gift gift={gift} key={gift.id} />
       ))}
     </ul>
   );

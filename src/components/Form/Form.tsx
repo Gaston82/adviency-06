@@ -21,6 +21,7 @@ const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
         type="text"
         placeholder="socks, jeans,t-shirt"
         value={inputValue}
+        autoFocus
         onChange={(event) => {
           setInputValue(event.target.value);
         }}
