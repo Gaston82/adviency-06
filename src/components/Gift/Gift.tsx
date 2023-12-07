@@ -3,9 +3,18 @@ import "./Gift.css";
 
 interface GiftProps {
   gift: GiftStructure;
+  onDeleteGift: (giftId: string) => void;
 }
-const Gift = ({ gift }: GiftProps): React.ReactElement => {
-  return <li className="gift">{gift.name}</li>;
+
+const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
+  return (
+    <li className="gift">
+      {gift.name}{" "}
+      <button className="form__button" onClick={() => onDeleteGift(gift.id)}>
+        X
+      </button>
+    </li>
+  );
 };
 
 export default Gift;
