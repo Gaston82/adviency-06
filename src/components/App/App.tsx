@@ -29,11 +29,18 @@ const App = (): React.ReactElement => {
     <section className="container">
       <h1 className="app-title">Regalos</h1>
       <Form onAddGifts={handleAddGift} />
-      <GiftList
-        gifts={gifts}
-        onDeleteGift={handleDeleteGift}
-        onDeleteGifts={handleDeleteGifts}
-      />
+      {gifts.length <= 0 ? (
+        <>
+          <p>You don't buy anything yet?</p>
+          <p>Start now</p>
+        </>
+      ) : (
+        <GiftList
+          gifts={gifts}
+          onDeleteGift={handleDeleteGift}
+          onDeleteGifts={handleDeleteGifts}
+        />
+      )}
     </section>
   );
 };
