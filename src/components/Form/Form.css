@@ -1,7 +1,12 @@
+.form {
+  padding: 16px;
+}
+
 .form__input {
-  border: none;
+  border: 1px solid black;
   border-radius: 4px;
   padding: 8px;
+  outline: none;
 }
 
 .form__button {
