@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(assets/images/christmas-bg.png);
+  background-image: url(../../assets/images/christmas-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
