@@ -10,12 +10,15 @@ const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (inputValue === "") {
+      return;
+    }
     onAddGifts(inputValue);
     setInputValue("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
         className="form__input"
         type="text"
