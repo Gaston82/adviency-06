@@ -16,11 +16,16 @@ const App = (): React.ReactElement => {
     setGifts([...gifts, newGift]);
   };
 
+  const handleDeleteGift = (giftId: string): void => {
+    const filteredGifts = gifts.filter((gift) => gift.id !== giftId);
+    setGifts(filteredGifts);
+  };
+
   return (
     <section className="container">
       <h1 className="app-title">Regalos</h1>
       <Form onAddGifts={handleAddGift} />
-      <GiftList gifts={gifts} />
+      <GiftList gifts={gifts} onDeleteGift={handleDeleteGift} />
     </section>
   );
 };
