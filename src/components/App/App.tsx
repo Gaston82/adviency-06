@@ -20,7 +20,7 @@ const App = (): React.ReactElement => {
     <section className="container">
       <h1 className="app-title">Regalos</h1>
       <Form onAddGifts={handleAddGift} />
-      <GiftList gifts={gifts} onAddGift={handleAddGift} />
+      <GiftList gifts={gifts} />
     </section>
   );
 };
