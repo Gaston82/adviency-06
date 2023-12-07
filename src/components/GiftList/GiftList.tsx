@@ -1,7 +1,11 @@
-import { gifts } from "../../data";
+import { GiftStructure } from "../../types";
 import "./GiftList.css";
 
-const GiftList = (): React.ReactElement => {
+interface GiftListProps {
+  gifts: GiftStructure[];
+}
+
+const GiftList = ({ gifts }: GiftListProps): React.ReactElement => {
   return (
     <ul className="gift-list">
       {gifts.map((gift) => (
