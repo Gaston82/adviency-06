@@ -9,9 +9,9 @@ interface GiftProps {
 const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
   return (
     <li className="gift">
-      {gift.name}{" "}
+      <h3>{gift.name}</h3>
       <button className="form__button" onClick={() => onDeleteGift(gift.id)}>
-        X
+        Delete
       </button>
     </li>
   );
