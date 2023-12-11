@@ -10,6 +10,7 @@ const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
   return (
     <li className="gift">
       <h3>{gift.name}</h3>
+      <span>{gift.quantity}</span>
       <button className="form__button" onClick={() => onDeleteGift(gift.id)}>
         Delete
       </button>
