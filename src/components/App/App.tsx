@@ -8,12 +8,8 @@ import { giftsApi } from "../../data";
 const App = (): React.ReactElement => {
   const [gifts, setGifts] = useState<GiftStructure[]>(giftsApi);
 
-  const handleAddGift = (giftName: string): void => {
-    const newGift = {
-      id: crypto.randomUUID(),
-      name: giftName,
-    };
-    setGifts([...gifts, newGift]);
+  const handleAddGift = (gift: GiftStructure): void => {
+    setGifts([...gifts, gift]);
   };
 
   const handleDeleteGift = (giftId: string): void => {
@@ -32,7 +28,7 @@ const App = (): React.ReactElement => {
         <Form onAddGifts={handleAddGift} />
         {gifts.length <= 0 ? (
           <>
-            <p>You don't buy anything yet?</p>
+            <p>You dont buy anything yet?</p>
             <p>Start now</p>
           </>
         ) : (
