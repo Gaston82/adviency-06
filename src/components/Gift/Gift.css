@@ -1,6 +1,6 @@
 .gift {
   padding-bottom: 10px;
   display: grid;
-  grid-template-columns: auto 20px 70px;
+  grid-template-columns: 40px auto 20px 70px;
   grid-column-gap: 50px;
 }
