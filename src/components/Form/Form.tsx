@@ -7,10 +7,11 @@ interface FormProps {
 }
 
 const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
-  const [gift, setGift] = useState({
+  const [gift, setGift] = useState<GiftStructure>({
     id: crypto.randomUUID(),
     name: "",
     quantity: 1,
+    image: "",
   });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -28,7 +29,7 @@ const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
     });
   };
 
-  const { name, quantity } = gift;
+  const { name, quantity, image } = gift;
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -40,6 +41,14 @@ const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
         name="name"
         onChange={handleInputChange}
         autoComplete="off"
+      />
+      <input
+        className="form__input"
+        type="url"
+        name="image"
+        value={image}
+        placeholder="http://image"
+        onChange={handleInputChange}
       />
       <input
         type="number"
