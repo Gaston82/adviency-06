@@ -1,0 +1,17 @@
+.button {
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 8px 12px;
+  border: none;
+  color: white;
+  background-color: rgb(160, 6, 30);
+  cursor: pointer;
+}
+
+.button.update {
+  background-color: rgb(58, 75, 22);
+}
+
+.button.add {
+  width: 200px;
+}
