@@ -4,3 +4,7 @@
   grid-template-columns: 40px auto 20px 70px;
   grid-column-gap: 50px;
 }
+
+.gift__recipient {
+  color: rgb(160, 6, 30);
+}
