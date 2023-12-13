@@ -20,11 +20,8 @@ const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
         <span className="gift__recipient">{gift.to}</span>
       </div>
       <span>{gift.quantity}</span>
-      <Button
-        text={"Delete"}
-        className={"form__button"}
-        action={handleDeleteGift}
-      />
+      <Button text={"Delete"} action={handleDeleteGift} />
+      <Button text={"Update"} className={"update"} />
     </li>
   );
 };
