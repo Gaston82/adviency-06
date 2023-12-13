@@ -11,6 +11,7 @@ const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
   const [gift, setGift] = useState<GiftStructure>({
     id: crypto.randomUUID(),
     name: "",
+    to: "",
     quantity: 1,
     image: "",
   });

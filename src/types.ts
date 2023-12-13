@@ -3,4 +3,5 @@ export interface GiftStructure {
   name: string;
   quantity: number;
   image: string;
+  to: string;
 }

@@ -3,6 +3,7 @@ export const giftsApi: GiftStructure[] = [
   {
     id: "01-01-01-01-01",
     name: "Laptop",
+    to: "Gastón",
     quantity: 2,
     image:
       "https://tse1.mm.bing.net/th?id=OIP.vuJ-O73FTlwOyci3054gggHaGS&pid=Api&P=0&h=180",
@@ -10,6 +11,7 @@ export const giftsApi: GiftStructure[] = [
   {
     id: "02-02-02-02-02",
     name: "Jeans",
+    to: "Laura",
     quantity: 2,
     image:
       "https://tse3.mm.bing.net/th?id=OIP.K0zdFD1kEwrX-GjZabBPxQHaIm&pid=Api&P=0&h=180",
