@@ -32,7 +32,7 @@ const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
     });
   };
 
-  const { name, quantity, image } = gift;
+  const { name, quantity, image, to } = gift;
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -60,6 +60,15 @@ const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
         value={quantity}
         name="quantity"
         onChange={handleInputChange}
+      />
+      <input
+        className="form__input"
+        type="text"
+        placeholder="Peter,Laura,Vida..."
+        value={to}
+        name="to"
+        onChange={handleInputChange}
+        autoComplete="off"
       />
       <button className="form__button" type="submit">
         Add
