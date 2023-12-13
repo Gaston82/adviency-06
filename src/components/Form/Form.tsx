@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 import { GiftStructure } from "../../types";
+import Button from "../Button/Button";
 
 interface FormProps {
   onAddGifts: (gift: GiftStructure) => void;
@@ -70,9 +71,7 @@ const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
         onChange={handleInputChange}
         autoComplete="off"
       />
-      <button className="form__button" type="submit">
-        Add
-      </button>
+      <Button className={"form__button"} type={"submit"} text={"Add"} />
     </form>
   );
 };
