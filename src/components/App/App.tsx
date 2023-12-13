@@ -34,11 +34,7 @@ const App = (): React.ReactElement => {
         {showModal && (
           <Modal onAddGifts={handleAddGift} onCloseModal={handleShowModal} />
         )}
-        <Button
-          text={"Add Gift"}
-          className={"form__button"}
-          action={handleShowModal}
-        />
+        <Button text={"Add Gift"} action={handleShowModal} className={"add"} />
         {gifts.length <= 0 ? (
           <>
             <p>You dont buy anything yet?</p>

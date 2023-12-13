@@ -71,7 +71,7 @@ const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
         onChange={handleInputChange}
         autoComplete="off"
       />
-      <Button className={"form__button"} type={"submit"} text={"Add"} />
+      <Button type={"submit"} text={"Add"} />
     </form>
   );
 };
