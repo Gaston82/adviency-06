@@ -21,11 +21,7 @@ const GiftList = ({
           <Gift gift={gift} key={gift.id} onDeleteGift={onDeleteGift} />
         ))}
       </ul>
-      <Button
-        text={"Delete All"}
-        className={"form__button"}
-        action={onDeleteGifts}
-      />
+      <Button text={"Delete All"} action={onDeleteGifts} />
     </>
   );
 };
