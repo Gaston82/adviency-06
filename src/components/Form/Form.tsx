@@ -4,9 +4,10 @@ import { GiftStructure } from "../../types";
 
 interface FormProps {
   onAddGifts: (gift: GiftStructure) => void;
+  onCloseModal: () => void;
 }
 
-const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
+const Form = ({ onAddGifts, onCloseModal }: FormProps): React.ReactElement => {
   const [gift, setGift] = useState<GiftStructure>({
     id: crypto.randomUUID(),
     name: "",
@@ -20,6 +21,7 @@ const Form = ({ onAddGifts }: FormProps): React.ReactElement => {
       return;
     }
     onAddGifts(gift);
+    onCloseModal();
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

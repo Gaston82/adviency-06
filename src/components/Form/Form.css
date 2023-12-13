@@ -1,5 +1,13 @@
 .form {
   padding: 16px;
+  gap: 10px;
+  flex-direction: column;
+  display: flex;
+  padding: 16px;
+  position: absolute;
+  background-color: white;
+  margin-top: 100px;
+  margin-left: 50%;
 }
 
 .form__input {

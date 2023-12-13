@@ -1,12 +1,13 @@
 import "./App.css";
-import Form from "../Form/Form";
 import GiftList from "../GiftList/GiftList";
 import { useState } from "react";
 import { GiftStructure } from "../../types";
 import { giftsApi } from "../../data";
+import Modal from "../Modal/Modal";
 
 const App = (): React.ReactElement => {
   const [gifts, setGifts] = useState<GiftStructure[]>(giftsApi);
+  const [showModal, setShowModal] = useState(false);
 
   const handleAddGift = (gift: GiftStructure): void => {
     setGifts([...gifts, gift]);
@@ -21,11 +22,20 @@ const App = (): React.ReactElement => {
     setGifts([]);
   };
 
+  const handleShowModal = (): void => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div className="container">
       <main className="main">
         <h1 className="app-title">Regalos</h1>
-        <Form onAddGifts={handleAddGift} />
+        {showModal && (
+          <Modal onAddGifts={handleAddGift} onCloseModal={handleShowModal} />
+        )}
+        <button className="form__button" onClick={handleShowModal}>
+          Add Gift
+        </button>
         {gifts.length <= 0 ? (
           <>
             <p>You dont buy anything yet?</p>
