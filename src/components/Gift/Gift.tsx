@@ -1,4 +1,5 @@
 import { GiftStructure } from "../../types";
+import Button from "../Button/Button";
 import "./Gift.css";
 
 interface GiftProps {
@@ -7,6 +8,10 @@ interface GiftProps {
 }
 
 const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
+  const handleDeleteGift = (): void => {
+    onDeleteGift(gift.id);
+  };
+
   return (
     <li className="gift">
       <img src={gift.image} alt="Gift photography" width={40} height={40} />
@@ -15,9 +20,11 @@ const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
         <span className="gift__recipient">{gift.to}</span>
       </div>
       <span>{gift.quantity}</span>
-      <button className="form__button" onClick={() => onDeleteGift(gift.id)}>
-        Delete
-      </button>
+      <Button
+        text={"Delete"}
+        className={"form__button"}
+        action={handleDeleteGift}
+      />
     </li>
   );
 };

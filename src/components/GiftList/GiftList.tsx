@@ -1,4 +1,5 @@
 import { GiftStructure } from "../../types";
+import Button from "../Button/Button";
 import Gift from "../Gift/Gift";
 import "./GiftList.css";
 
@@ -20,9 +21,11 @@ const GiftList = ({
           <Gift gift={gift} key={gift.id} onDeleteGift={onDeleteGift} />
         ))}
       </ul>
-      <button className="form__button" onClick={onDeleteGifts}>
-        Delete All
-      </button>
+      <Button
+        text={"Delete All"}
+        className={"form__button"}
+        action={onDeleteGifts}
+      />
     </>
   );
 };
