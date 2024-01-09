@@ -27,6 +27,16 @@ const App = (): React.ReactElement => {
     setShowModal(!showModal);
   };
 
+  const handleUpdateGift = (giftId: string, newGift: GiftStructure) => {
+    const updatedGifts = gifts.map((gift) => {
+      if (gift.id === giftId) {
+        return { ...gift, newGift };
+      }
+      return gift;
+    });
+    setGifts(updatedGifts);
+  };
+
   return (
     <div className="container">
       <main className="main">
@@ -45,6 +55,7 @@ const App = (): React.ReactElement => {
             gifts={gifts}
             onDeleteGift={handleDeleteGift}
             onDeleteGifts={handleDeleteGifts}
+            onUpdateGift={handleUpdateGift}
           />
         )}
       </main>

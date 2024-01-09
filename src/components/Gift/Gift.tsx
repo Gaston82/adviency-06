@@ -5,11 +5,20 @@ import "./Gift.css";
 interface GiftProps {
   gift: GiftStructure;
   onDeleteGift: (giftId: string) => void;
+  onUpdateGift: (giftId: string, newGift: GiftStructure) => void;
 }
 
-const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
+const Gift = ({
+  gift,
+  onDeleteGift,
+  onUpdateGift,
+}: GiftProps): React.ReactElement => {
   const handleDeleteGift = (): void => {
     onDeleteGift(gift.id);
+  };
+
+  const handleUpdateGift = () => {
+    onUpdateGift(gift.id, gift);
   };
 
   return (
@@ -21,7 +30,7 @@ const Gift = ({ gift, onDeleteGift }: GiftProps): React.ReactElement => {
       </div>
       <span>{gift.quantity}</span>
       <Button text={"Delete"} action={handleDeleteGift} />
-      <Button text={"Update"} className={"update"} />
+      <Button text={"Update"} className={"update"} action={handleUpdateGift} />
     </li>
   );
 };
